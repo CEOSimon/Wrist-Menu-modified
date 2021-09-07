@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using HarmonyLib;
 using BepInEx;
@@ -165,15 +165,15 @@ namespace WristMenu
                             Photon.Realtime.Player player;
                             bool taggable = GorillaTagger.Instance.TryToTag(hitInfo, true, out player);
 
-                           
-                                pointer.GetComponent<Renderer>().material.SetColor("_Color", Color.black);
-                                ExitGames.Client.Photon.Hashtable gameTable = new ExitGames.Client.Photon.Hashtable();
-                                gameTable.Add("matIndex", BlueMaterial);
-                                player.SetCustomProperties(gameTable);
+
+                            pointer.GetComponent<Renderer>().material.SetColor("_Color", Color.black);
+                            ExitGames.Client.Photon.Hashtable gameTable = new ExitGames.Client.Photon.Hashtable();
+                            gameTable.Add("matIndex", NeonRed);
+                            player.SetCustomProperties(gameTable);
 
 
 
-                            
+
                         }
 
                         if (buttonsActive[2] == true)
@@ -195,7 +195,7 @@ namespace WristMenu
                                 foreach (Player plr in PhotonNetwork.PlayerList)
                                 {
                                     ExitGames.Client.Photon.Hashtable gameTable = new ExitGames.Client.Photon.Hashtable();
-                                    gameTable.Add("matIndex", RedTransparent);
+                                    gameTable.Add("matIndex", TransparentMaterial);
                                     plr.SetCustomProperties(gameTable);
                                 };
                             }
@@ -339,7 +339,7 @@ namespace WristMenu
             titleObj.transform.parent = canvasObj.transform;
             Text title = titleObj.AddComponent<Text>();
             title.font = Resources.GetBuiltinResource(typeof(Font), "Arial.ttf") as Font;
-            title.text = "Monke Mod Menu";
+            title.text = "Overpowered Menu";
             title.fontSize = 1;
             title.alignment = TextAnchor.MiddleCenter;
             title.resizeTextForBestFit = true;
