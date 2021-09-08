@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using HarmonyLib;
 using BepInEx;
@@ -29,7 +29,7 @@ namespace WristMenu
     [HarmonyPatch("Update", MethodType.Normal)]
     class MenuPatch
     {
-        static string[] buttons = new string[] { "Toggle Super Monke", "Material Gun", "Toggle Speed Boost", "Material All", "Turn Off Tag Freeze", "Toggle Beacon", "Change Material" };
+        static string[] buttons = new string[] { "Toggle Super Monke", "Material Gun", "Toggle Speed Boost", "Material All", "Turn Off Tag Freeze", "Toggle Beacon", "Change Material Self" };
         static bool?[] buttonsActive = new bool?[] { false, false, false, false, false, false, false };
         static bool gripDown;
         static GameObject menu = null;
