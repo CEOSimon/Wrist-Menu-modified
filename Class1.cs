@@ -29,7 +29,7 @@ namespace WristMenu
     [HarmonyPatch("Update", MethodType.Normal)]
     class MenuPatch
     {
-        static string[] buttons = new string[] { "Toggle Super Monke", "Material Gun", "Toggle Speed Boost", "Material All", "Turn Off Tag Freeze", "Toggle Beacon", "Change Material Self" };
+        static string[] buttons = new string[] { "On/Off Super Monk", "Material Gun", "Toggle lava Speed Boost", "Material All", "Turn Off Tag Freeze", "Toggle Beacon", "Change Material Self" };
         static bool?[] buttonsActive = new bool?[] { false, false, false, false, false, false, false };
         static bool gripDown;
         static GameObject menu = null;
@@ -362,7 +362,7 @@ namespace WristMenu
             titleObj.transform.parent = canvasObj.transform;
             Text title = titleObj.AddComponent<Text>();
             title.font = Resources.GetBuiltinResource(typeof(Font), "Arial.ttf") as Font;
-            title.text = "Overpowered Menu";
+            title.text = "mysty's menu";
             title.fontSize = 1;
             title.alignment = TextAnchor.MiddleCenter;
             title.resizeTextForBestFit = true;
